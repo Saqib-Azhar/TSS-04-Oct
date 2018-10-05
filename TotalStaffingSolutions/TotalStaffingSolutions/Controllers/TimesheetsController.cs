@@ -267,7 +267,7 @@ namespace TotalStaffingSolutions.Controllers
                     try
                     {
                         var fromAddress = new MailAddress(SenderEmailId, "Total Staffing Solution");
-                        var toAddress = new MailAddress("sazhar@viretechnologies.com", admin.Email);
+                        var toAddress = new MailAddress(admin.Email, admin.Email);
                         string fromPassword = SenderEmailPassword;
                         string subject = "Total Staffing Solution: Timesheet Update";
                         string body = "<b>Hello " + admin.UserName + "!</b><br />Client has submitted the timesheet<br /> <a href='" + TSSLiveSiteURL + "/Timesheets/TimeSheetDetails/" + timesheet.Id + "'>Timesheet Link</a><br />Thanks for joining and have a great day! <br />Total Staffing Solutions";
@@ -306,7 +306,7 @@ namespace TotalStaffingSolutions.Controllers
                     try
                     {
                         var fromAddress = new MailAddress(SenderEmailId, "Total Staffing Solution");
-                        var toAddress = new MailAddress("sazhar@viretechnologies.com", user.Email);
+                        var toAddress = new MailAddress(user.Email, user.Email);
                         string fromPassword = SenderEmailPassword;
                         string subject = "Total Staffing Solution: Timesheet Update";
                         string body = "<b>Hello " + user.UserName + "!</b><br />Following timesheet has been submitted<br />"

@@ -180,7 +180,7 @@ namespace TotalStaffingSolutions.Controllers
                         var AdminId = timesheet.Created_By;
                         var admin = db.AspNetUsers.FirstOrDefault(s => s.Id == AdminId);
                         var fromAddress = new MailAddress(SenderEmailId, "Total Staffing Solution");
-                        var toAddress = new MailAddress("sazhar@viretechnologies.com", admin.Email);
+                        var toAddress = new MailAddress(admin.Email, admin.Email);
                         string fromPassword = SenderEmailPassword;
                         string subject = "Total Staffing Solution: Timesheet Update";
                         string body = "<b>Hello " + admin.UserName + "!</b><br />Client has Rejected the timesheet<br /> <a href='" + TSSLiveSiteURL + "/Timesheets/TimeSheetDetails/" + timesheet.Id + "'>Timesheet Link</a><br />";

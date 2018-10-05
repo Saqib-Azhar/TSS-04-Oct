@@ -188,7 +188,7 @@ namespace TotalStaffingSolutions.Controllers
                             try
                             {
                                 var fromAddress = new MailAddress(SenderEmailId, "Total Staffing Solution");
-                                var toAddress = new MailAddress("saqibabdullahazhar@gmail.com", savedContactObj.Contact_name);
+                                var toAddress = new MailAddress(savedContactObj.Email_id, savedContactObj.Contact_name);
                                 string fromPassword = SenderEmailPassword;
                                 string subject = "Total Staffing Solution: Account Confirmation";
                                 string body = "<b>Hi " + savedContactObj.Contact_name + "!</b><br />Please confirm your email by clicking on following link <br /> <a href='" + TSSLiveSiteURL + "/ClientDashboard/ConfirmAccount?token=" + ConfirmationToken + "'>Confirmation Link</a><br /><small style='text-align:center;'>(This Link is active for next 24 hours, Please make sure to Enable your account before " + DateTime.Now.AddHours(24) + ")</small>";
@@ -245,7 +245,7 @@ namespace TotalStaffingSolutions.Controllers
             }
         }
         [Authorize(Roles = "Admin")]
-
+        [NonAction]
         public bool Test()
         {
             try

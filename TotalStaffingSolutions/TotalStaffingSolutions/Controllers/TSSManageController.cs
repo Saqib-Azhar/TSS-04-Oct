@@ -353,7 +353,7 @@ namespace TotalStaffingSolutions.Controllers
             try
             {
                 var fromAddress = new MailAddress(SenderEmailId, "Total Staffing Solution");
-                var toAddress = new MailAddress("sazhar@viretechnologies.com", savedContactObj.Contact_name);
+                var toAddress = new MailAddress(savedContactObj.Contact_name, savedContactObj.Contact_name);
                 string fromPassword = SenderEmailPassword;
                 string subject = "Total Staffing Solution: Account Confirmation";
                 string body = "<b>Hello " + savedContactObj.Email_id + "!</b><br />Someone has invited you to http://total-staffing.raisenit.com/, you can accept it through the link below.<br /> <a href='" + TSSLiveSiteURL + "/ClientDashboard/ConfirmAccount?token=" + ConfirmationToken + "'>Accept invitation</a><br /><small style='text-align:center;'>(If you don't want to accept the invitation, please ignore this email.Your account won't be created until you access the link above and set your password.<br/><b>This Link is active for next 24 hours, Please make sure to Enable your account before " + DateTime.Now.AddHours(24) + "</b>)</small>";
@@ -439,7 +439,7 @@ namespace TotalStaffingSolutions.Controllers
             try
             {
                 var fromAddress = new MailAddress(SenderEmailId, "Total Staffing Solution");
-                var toAddress = new MailAddress("sazhar@viretechnologies.com", email);
+                var toAddress = new MailAddress(email, email);
                 string fromPassword = SenderEmailPassword;
                 string subject = "Total Staffing Solution: New Timesheet";
                 DateTime saturday = DateTime.Now.AddDays(6 - Convert.ToDouble(DateTime.Now.DayOfWeek));

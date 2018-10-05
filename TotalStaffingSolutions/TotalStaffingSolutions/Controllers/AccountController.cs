@@ -13,7 +13,7 @@ using System.Web.Security;
 
 namespace TotalStaffingSolutions.Controllers
 {
-    [Authorize]
+  //  [Authorize]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -150,7 +150,7 @@ namespace TotalStaffingSolutions.Controllers
 
         //
         // GET: /Account/Register
-        [Authorize(Roles = "Admin")]
+       // [Authorize(Roles = "Admin")]
         public ActionResult Register()
         {
             return View();
@@ -159,7 +159,7 @@ namespace TotalStaffingSolutions.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [Authorize(Roles = "Admin")]
+      //  [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
