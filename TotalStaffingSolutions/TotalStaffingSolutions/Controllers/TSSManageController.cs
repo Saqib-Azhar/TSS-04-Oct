@@ -410,17 +410,19 @@ namespace TotalStaffingSolutions.Controllers
             }
         }
 
-
+        [AllowAnonymous]
         public ActionResult GoToDashboard()
         {
             if (User.IsInRole("Admin"))
             {
                 return RedirectToAction("Dashboard", "TSSManage");
             }
-            else
+            else if (User.IsInRole("User"))
             {
                 return RedirectToAction("AllTimeSheets", "ClientDashboard");
             }
+            else
+                return RedirectToAction("Login", "Account");
         }
 
         public JsonResult SendTimeSheetLink(int id, string email, int checkUser = 0)

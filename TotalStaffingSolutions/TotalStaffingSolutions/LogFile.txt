@@ -1,0 +1,4 @@
+05-Oct-18 6:15:35 PM Column 'CusmastCuccustid' does not belong to table Table.
+05-Oct-18 6:15:36 PM System.Data Column 'CusmastCuccustid' does not belong to table Table.
+05-Oct-18 6:15:45 PM Object reference not set to an instance of an object.
+05-Oct-18 6:15:45 PM TotalStaffingSolutions Object reference not set to an instance of an object.
